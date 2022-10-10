@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.bed_outlined), label: "bed outlined"),
           ],
           iconSize: 20,
-          selectedIconTheme: IconThemeData(size: 30),
+          selectedIconTheme:const IconThemeData(size: 30),
           currentIndex: _selectedIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
@@ -51,8 +51,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: IndexedStack(
         index: _selectedIndex,
-        children: [
-          HomeMonitoring(),
+        children:  [
+           HomeMonitoring(),
           HomeControl(),
           ClimateControl(),
           Bedroom(),
