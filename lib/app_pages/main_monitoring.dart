@@ -1,251 +1,139 @@
+import 'package:responsive_framework/responsive_framework.dart';
+import '../resources/pages_ButtonFirstRow.dart';
 import 'package:flutter/material.dart';
 
 class HomeMonitoring extends StatefulWidget {
-  HomeMonitoring({Key? key}) : super(key: key);
+  const HomeMonitoring({Key? key}) : super(key: key);
 
   @override
   State<HomeMonitoring> createState() => _HomeMonitoringState();
 }
 
 class _HomeMonitoringState extends State<HomeMonitoring> {
-  double valor = 0;
+  double valor = 0; //! Arrumar
+
   @override
   Widget build(BuildContext context) {
     return Container(
         constraints: const BoxConstraints.expand(),
-        padding: const EdgeInsets.only(top: 80, left: 20, right: 20),
-        color: const Color.fromARGB(255, 15, 2, 47),
-        child: Column(children: [
-          Row(
+        padding: const EdgeInsets.all(10),
+        decoration: const BoxDecoration(
+            gradient:  LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+              Color.fromARGB(255, 1, 2, 19),
+              Color.fromARGB(255, 3, 3, 39),
+            ])),
+        child: Container(
+          alignment: Alignment.center,
+          constraints: const BoxConstraints.expand(),
+          padding: const EdgeInsets.only(left: 12, right: 12),
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                Color.fromARGB(255, 1, 2, 19),
+              Color.fromARGB(255, 3, 3, 39),
+              ])),
+          child: SingleChildScrollView(
+            child: Stack(
+            alignment: Alignment.center,
             children: [
-              Row(
-                children: [
-                  Text(
-                    "Smart",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.blue[400]),
+              ResponsiveWrapper(
+                minWidth: 500,
+                maxWidthLandscape: 1080,
+                breakpoints: const [
+                  ResponsiveBreakpoint.autoScale(700, name: MOBILE),
+                  ResponsiveBreakpoint.autoScale(1600, name: DESKTOP)
+                ],
+                child: Column(
+                  children: [
+                  Row(
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            "Smart",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.blue[400]),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: const Text(
+                              "Room",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white),
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                   Container(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: const Text(
-                      "Room",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w800,
-                          color: Colors.white),
-                    ),
-                  )
-                ],
-              ),
-            ],
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 70, bottom: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Row(
+                    padding: const EdgeInsets.only(top: 50, bottom: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Página",
-                          style: TextStyle(fontSize: 40, color: Colors.white),
-                        ),
-                        Container(
-                            padding: const EdgeInsets.only(left: 10),
-                            child: Container(
-                              decoration: const BoxDecoration(
-                                  border: Border(
-                                bottom:
-                                    BorderSide(color: Colors.blue, width: 3),
-                              )),
-                              child: Text(
-                                "Inicial",
-                                style: TextStyle(
-                                    fontSize: 35,
-                                    fontWeight: FontWeight.w800,
-                                    color: Colors.blue[400]),
-                              ),
-                            ))
-                      ],
-                    ),
-                  ],
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.end, children: const [
-                  Icon(
-                    Icons.wifi,
-                    color: Colors.white,
-                  ),
-                ])
-              ],
-            ),
-          ),
-          Column(
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                      width: 170,
-                      height: 250,
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                                spreadRadius: 4,
-                                blurRadius: 10,
-                                offset: Offset(3, 2),
-                                color: Color.fromARGB(255, 13, 3, 196))
-                          ],
-                        ),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              padding: const EdgeInsets.all(20),
-                              shadowColor: Colors.blue,
-                              backgroundColor:
-                                  Color.fromARGB(255, 19, 50, 248),
-                              foregroundColor:
-                                  Color.fromARGB(255, 9, 16, 148)),
-                          onPressed: () {},
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  const Text(
-                                    "Temperatura \nAtual",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: const [
-                                      Icon(
-                                          color: Colors.white, Icons.thermostat)
-                                    ],
-                                  )
-                                ],
-                              ),
-                              Padding(
-                                  padding: const EdgeInsets.only(top: 80),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          //* Alterar com API
-                                          Text(
-                                            "24",
-                                            style: TextStyle(
-                                                fontSize: 40,
-                                                color: Colors.white),
-                                          ),
-                                          Text(
-                                            "°c",
-                                            style: TextStyle(
-                                                fontSize: 40,
-                                                color: Colors.white),
-                                          )
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 180,
-                                        height: 40,
-                                        child: SliderTheme(
-                                          data: const SliderThemeData(
-                                            disabledThumbColor: Colors.white,
-                                            disabledInactiveTrackColor: Colors.blue,
-                                          ),
-                                          child: Slider(
-                                          thumbColor: Colors.white,
-                                          value: valor,
-                                          onChanged: null,
-                                          min: 0,
-                                          max: 10,
-                                        ),
-                                        ),
-                                      )
-                                    ],
-                                  ))
-                            ],
-                          ),
-                        ),
-                      )),
-
-                  //! Button 02
-
-                  Padding(
-                    padding: const EdgeInsets.only(left: 30),
-                    child: SizedBox(
-                        width: 170,
-                        height: 250,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  spreadRadius: 4,
-                                  blurRadius: 10,
-                                  offset: Offset(3, 2),
-                                  color: Colors.blueAccent)
-                            ],
-                          ),
-                          child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                padding: const EdgeInsets.all(20),
-                                shadowColor: Colors.blue,
-                                backgroundColor:
-                                    const Color.fromARGB(255, 19, 153, 248),
-                                foregroundColor:
-                                    const Color.fromARGB(255, 13, 22, 187)),
-                            onPressed: () {},
-                            child: Column(
+                        Row(
+                          children: [
+                            Row(
                               children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    const Text(
-                                      "Temperatura \nAtual",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: const [
-                                        Icon(
-                                            color: Colors.white,
-                                            Icons.thermostat)
-                                      ],
-                                    )
-                                  ],
+                                const Text(
+                                  "Página",
+                                  style: TextStyle(
+                                      fontSize: 40, color: Colors.white),
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 50),
-                                  child: Row(
-                                    children: const [
-                                      //* Alterar com API
-                                      Text(
-                                        "24",
+                                Container(
+                                    padding: const EdgeInsets.only(left: 10),
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                          border: Border(
+                                        bottom: BorderSide(
+                                            color: Colors.blue, width: 3),
+                                      )),
+                                      child: Text(
+                                        "Inicial",
                                         style: TextStyle(
-                                            fontSize: 40, color: Colors.white),
+                                            fontSize: 35,
+                                            fontWeight: FontWeight.w800,
+                                            color: Colors.blue[400]),
                                       ),
-                                      Text(
-                                        "°c",
-                                        style: TextStyle(
-                                            fontSize: 40, color: Colors.white),
-                                      )
-                                    ],
-                                  ),
-                                )
+                                    ))
                               ],
                             ),
-                          ),
-                        )),
-                  )
-                ],
+                          ],
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: const [
+                              Icon(
+                                Icons.wifi,
+                                color: Colors.white,
+                              ),
+                            ])
+                      ],
+                    ),
+                  ),
+                  Column(
+                    children: [
+                      pagesButtonsFistRow(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30, bottom: 10),
+                        child: pagesButtonsFistRow(),
+                      )
+                    ],
+                  ),
+                ]),
               )
             ],
           ),
-        ]));
+          ),
+        ));
   }
 }

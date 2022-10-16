@@ -13,7 +13,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  void _onTapItem(int index) {
+
+  void onTapItem(int index) {
     setState(() {
       _selectedIndex = index;
     });
@@ -22,14 +23,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Theme(
-        data: Theme.of(context)
-            .copyWith(canvasColor: const Color.fromARGB(255, 15, 2, 47)),
-        child: BottomNavigationBar(
-          elevation: 0,
+      bottomNavigationBar: Theme(data: Theme.of(context).copyWith(
+        dividerColor: Color.fromARGB(255, 3, 3, 39),
+        canvasColor: Color.fromARGB(255, 3, 3, 39),
+      ), child: BottomNavigationBar(
+        backgroundColor: Colors.transparent,
+          elevation: 6,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_outlined), label: "home outlined"),
+                icon: Icon(Icons.home_filled), label: "home outlined"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.thermostat_outlined),
                 label: "thermostat outlined"),
@@ -37,24 +39,24 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.lightbulb_outline),
                 label: "lightbulb outline"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.bed_outlined), label: "bed outlined"),
+                icon: Icon(Icons.king_bed_outlined), label: "bed outlined"),
           ],
           iconSize: 20,
-          selectedIconTheme:const IconThemeData(size: 30),
+          selectedIconTheme: const IconThemeData(size: 30),
           currentIndex: _selectedIndex,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           unselectedItemColor: Colors.white,
           selectedItemColor: Colors.blue,
-          onTap: _onTapItem,
-        ),
-      ),
+          onTap: onTapItem,
+          
+        ),),
       body: IndexedStack(
         index: _selectedIndex,
-        children:  [
-           HomeMonitoring(),
-          HomeControl(),
+        children: [
+          HomeMonitoring(),
           ClimateControl(),
+          HomeControl(),
           Bedroom(),
         ],
         sizing: StackFit.expand,

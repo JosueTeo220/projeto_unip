@@ -10,6 +10,12 @@ class ClimateControl extends StatefulWidget {
 class _ClimateControlState extends State<ClimateControl> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: const Color.fromARGB(255, 15, 2, 47),
+      ),
+      backgroundColor: const Color.fromARGB(255, 15, 2, 47),
+    );
   }
 }
