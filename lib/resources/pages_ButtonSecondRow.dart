@@ -1,18 +1,17 @@
-// ignore: file_names
 import 'package:aplicacao_unip/app_pages/climate_control.dart';
 import 'package:flutter/material.dart';
 
-class pagesButtonsFistRow extends StatefulWidget {
-  pagesButtonsFistRow({Key? key}) : super(key: key);
+// ignore: camel_case_types
+class Pages_ButtonSecondRow extends StatefulWidget {
+  Pages_ButtonSecondRow({Key? key}) : super(key: key);
 
   @override
-  State<pagesButtonsFistRow> createState() => _pagesButtonsFistRow();
+  State<Pages_ButtonSecondRow> createState() => _Pages_ButtonSecondRowState();
 }
 
-class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
+class _Pages_ButtonSecondRowState extends State<Pages_ButtonSecondRow> {
   @override
   Widget build(BuildContext context) {
-    double valor = 20;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -27,14 +26,15 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                     end: Alignment.bottomCenter,
                     colors: [
                       Color.fromARGB(255, 1, 3, 41),
-                      Color.fromARGB(255, 17, 22, 107),
+                      Color.fromARGB(154, 1, 3, 41),
+                      Color.fromARGB(169, 7, 123, 51),
                     ]),
                 boxShadow: [
                   BoxShadow(
                     spreadRadius: 2,
                     blurRadius: 4,
                     offset: Offset(2, 3),
-                    color: Color.fromARGB(255, 0, 79, 147),
+                    color: Color.fromARGB(124, 62, 180, 3),
                   )
                 ],
               ),
@@ -60,59 +60,56 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const Text(
-                          "Temperatura \nAtual",
+                          "Nível de \nUmidade",
                           style: TextStyle(color: Colors.white),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: const [
-                            Icon(color: Colors.white, Icons.thermostat)
+                            Icon(color: Colors.white, Icons.water_drop_outlined)
                           ],
                         )
                       ],
                     ),
                     Padding(
-                        padding: const EdgeInsets.only(top: 70),
+                        padding: const EdgeInsets.only(top: 80),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Row(
                               children: const [
-                                //* Alterar com API
+                                //! Alterar com API
                                 Text(
-                                  "24",
+                                  "48",
                                   style: TextStyle(
                                       fontSize: 40, color: Colors.white),
                                 ),
                                 Text(
-                                  "°c",
+                                  "%",
                                   style: TextStyle(
                                       fontSize: 40, color: Colors.white),
                                 )
                               ],
                             ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 25),
+                              child: Row(
+                                children: const [
+                                  //! Alterar com API
+                                  Text(
+                                    "Nível: ",
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.white),
+                                  ),
+                                  Text(
+                                    "Normal",
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.white),
+                                  )
+                                ],
+                              ),
+                            )
                           ],
-                        )),
-                    Container(
-                      padding: EdgeInsets.only(top: 10),
-                      child: SizedBox(
-                        child: SliderTheme(
-                        data: const SliderThemeData(
-                          trackHeight: 3,
-                          disabledThumbColor: Colors.white,
-                          disabledActiveTrackColor: Colors.blueAccent,
-                          disabledInactiveTrackColor: Colors.blue,
-                        ),
-                        child: Slider(
-                          thumbColor: Colors.white,
-                          value: valor,
-                          onChanged: null,
-                          min: 0,
-                          max: 70,
-                        ),
-                      ),
-                      ),
-                    )
+                        ))
                   ],
                 ),
               ),
@@ -132,14 +129,14 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                       colors: [
                         Color.fromARGB(255, 1, 3, 41),
                         Color.fromARGB(154, 1, 3, 41),
-                        Color.fromARGB(205, 240, 133, 10),
+                        Color.fromARGB(205, 171, 10, 240),
                       ]),
                   boxShadow: [
                     BoxShadow(
                       spreadRadius: 2,
                       blurRadius: 4,
                       offset: Offset(2, 3),
-                      color: Color.fromARGB(188, 146, 89, 9),
+                      color: Color.fromARGB(163, 171, 10, 240),
                     )
                   ],
                 ),
@@ -165,30 +162,43 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            "Iluminação",
+                            "Despertador",
                             style: TextStyle(color: Colors.white),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: const [
-                              Icon(color: Colors.white, Icons.light_mode)
+                              Icon(color: Colors.white, Icons.timer)
                             ],
                           )
                         ],
                       ),
                       Padding(
-                          padding: const EdgeInsets.only(top: 50),
+                          padding: const EdgeInsets.only(top: 80),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Row(
                                 children: const [
-                                  //* Alterar com API
                                   Text(
                                     //! Alterar com API
-                                    "Escuro",
+                                    "09:00",
                                     style: TextStyle(
-                                        fontSize: 30, color: Colors.white),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 45,
+                                        color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: const [
+                                  //! Alterar com API
+                                  Text(
+                                    "Dom-Sáb",
+                                    style: TextStyle(
+                                        fontSize: 15, color: Colors.white),
                                   ),
                                 ],
                               ),
@@ -197,13 +207,10 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    "Luz \nApagada",
+                                    "Horário marcado",
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.white),
                                   ),
-                                  Icon(
-                                      color: Colors.white,
-                                      Icons.lightbulb_rounded)
                                 ],
                               ),
                             ],

@@ -33,8 +33,8 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_filled), label: "home outlined"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.thermostat_outlined),
-                label: "thermostat outlined"),
+                icon: Icon(Icons.thermostat),
+                label: "thermostat"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.lightbulb_outline),
                 label: "lightbulb outline"),
