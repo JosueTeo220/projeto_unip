@@ -12,6 +12,7 @@ class pagesButtonsFistRow extends StatefulWidget {
 class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
   @override
   Widget build(BuildContext context) {
+    //! Alterar com API
     double valor = 20;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +79,7 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                           children: [
                             Row(
                               children: const [
-                                //* Alterar com API
+                               //! Alterar com API
                                 Text(
                                   "24",
                                   style: TextStyle(
@@ -181,7 +182,6 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                             children: [
                               Row(
                                 children: const [
-                                  //* Alterar com API
                                   Text(
                                     //! Alterar com API
                                     "Escuro",
@@ -196,6 +196,7 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
+                                    //! Alterar com API
                                     "Luz \nApagada",
                                     style: TextStyle(
                                         fontSize: 15, color: Colors.white),
