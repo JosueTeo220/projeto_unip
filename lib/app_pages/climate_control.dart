@@ -13,9 +13,22 @@ class _ClimateControlState extends State<ClimateControl> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color.fromARGB(255, 15, 2, 47),
+        backgroundColor: const Color.fromARGB(255, 2, 5, 54),
       ),
-      backgroundColor: const Color.fromARGB(255, 15, 2, 47),
+      backgroundColor: const Color.fromARGB(255, 2, 5, 54),
+      body: Container(
+        constraints: const BoxConstraints.expand(),
+        padding: const EdgeInsets.all(10),
+
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+              Color.fromARGB(255, 2, 5, 54),
+              Color.fromARGB(255, 3, 3, 39),
+            ])),
+      ),
     );
   }
 }

@@ -190,6 +190,7 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                                   ),
                                 ],
                               ),
+                              const Padding(padding: EdgeInsets.only(top: 20)),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -201,7 +202,7 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                                   ),
                                   Icon(
                                       color: Colors.white,
-                                      Icons.lightbulb_rounded)
+                                      Icons.lightbulb_outlined)
                                 ],
                               ),
                             ],

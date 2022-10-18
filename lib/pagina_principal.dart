@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 2, 5, 54),
       bottomNavigationBar: Theme(data: Theme.of(context).copyWith(
         dividerColor: Color.fromARGB(255, 3, 3, 39),
         canvasColor: Color.fromARGB(255, 3, 3, 39),
