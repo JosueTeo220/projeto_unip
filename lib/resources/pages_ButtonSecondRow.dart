@@ -91,7 +91,7 @@ class _Pages_ButtonSecondRowState extends State<Pages_ButtonSecondRow> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 25),
+                              padding: const EdgeInsets.only(top: 20),
                               child: Row(
                                 children: const [
                                   //! Alterar com API
@@ -174,7 +174,7 @@ class _Pages_ButtonSecondRowState extends State<Pages_ButtonSecondRow> {
                         ],
                       ),
                       Padding(
-                          padding: const EdgeInsets.only(top: 80),
+                          padding: const EdgeInsets.only(top: 70),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [

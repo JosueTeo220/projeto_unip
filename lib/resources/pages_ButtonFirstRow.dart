@@ -93,9 +93,7 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                             ),
                           ],
                         )),
-                    Container(
-                      padding: EdgeInsets.only(top: 10),
-                      child: SizedBox(
+                    SizedBox(
                         child: SliderTheme(
                         data: const SliderThemeData(
                           trackHeight: 3,
@@ -112,7 +110,7 @@ class _pagesButtonsFistRow extends State<pagesButtonsFistRow> {
                         ),
                       ),
                       ),
-                    )
+                    
                   ],
                 ),
               ),
