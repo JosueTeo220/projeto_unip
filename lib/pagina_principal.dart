@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 2, 5, 54),
       bottomNavigationBar: Theme(data: Theme.of(context).copyWith(
         dividerColor: Color.fromARGB(255, 3, 3, 39),
         canvasColor: Color.fromARGB(255, 3, 3, 39),
@@ -33,8 +34,8 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_filled), label: "home outlined"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.thermostat_outlined),
-                label: "thermostat outlined"),
+                icon: Icon(Icons.thermostat),
+                label: "thermostat"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.lightbulb_outline),
                 label: "lightbulb outline"),
