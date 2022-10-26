@@ -1,0 +1,11 @@
+{
+    // editor
+  "editor.wordWrap": "on",
+  "editor.fontSize": 17,
+  "editor.lineHeight": 25,
+  "terminal.integrated.fontSize": 17,
+  "editor.guides.bracketPairs": true,
+  // explorer
+  "explorer.compactFolders": false,
+
+}
